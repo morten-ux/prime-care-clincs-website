@@ -47,54 +47,6 @@ body {
   animation: page-fade-in var(--dur-slow) var(--ease-out) both;
 }
 
-body.has-custom-cursor,
-body.has-custom-cursor * {
-  cursor: none !important;
-}
-
-/* ------------------------------------------------------------
-   2b. Custom Cursor
-   ------------------------------------------------------------ */
-.cursor-dot {
-  width: 5px;
-  height: 5px;
-  background: var(--clr-gold);
-  border-radius: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: width var(--dur-fast) var(--ease-out),
-              height var(--dur-fast) var(--ease-out),
-              opacity var(--dur-fast) var(--ease-out);
-  will-change: transform;
-}
-
-.cursor-ring {
-  width: 34px;
-  height: 34px;
-  border: 1px solid rgba(181, 154, 106, 0.45);
-  border-radius: 50%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%, -50%);
-  transition: width 0.22s var(--ease-out),
-              height 0.22s var(--ease-out),
-              border-color 0.22s var(--ease-out),
-              opacity var(--dur-fast) var(--ease-out);
-  will-change: transform;
-}
-
-.cursor-ring--hover {
-  width: 52px;
-  height: 52px;
-  border-color: rgba(181, 154, 106, 0.7);
-}
 
 @keyframes page-fade-in {
   from { opacity: 0; }
