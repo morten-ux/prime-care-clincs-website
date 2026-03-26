@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Over Ons — Prime Care Clinics</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      color: #2a2218;
+      background-color: #fdfbf8;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.6rem 5rem;
+      background-color: #fdfbf8;
+      border-bottom: 1px solid #ece7de;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #2a2218;
+      text-decoration: none;
+    }
+
+    .logo span { color: #b59a6a; }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #555;
+      margin-left: 2.5rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover { color: #1a1a1a; }
+    .nav-links a.active { color: #b59a6a; }
+
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #b59a6a;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-divider {
+      width: 48px;
+      height: 2px;
+      background-color: #b59a6a;
+      margin: 2.5rem 0;
+    }
+
+    /* Page header */
+    .page-header {
+      padding: 7rem 5rem 5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .page-header h1 {
+      font-size: 3rem;
+      font-family: 'Georgia', serif;
+      font-weight: 400;
+      line-height: 1.2;
+      max-width: 660px;
+      color: #2a2218;
+    }
+
+    .page-header p {
+      font-size: 1rem;
+      color: #666;
+      max-width: 560px;
+      line-height: 1.85;
+    }
+
+    /* Stats bar */
+    .stats-bar {
+      background-color: #2e2318;
+      padding: 3.5rem 5rem;
+      display: flex;
+      justify-content: center;
+      gap: 6rem;
+      flex-wrap: wrap;
+    }
+
+    .stat { text-align: center; }
+
+    .stat h3 {
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+
+    .stat h3 span { color: #b59a6a; }
+
+    .stat p {
+      font-size: 0.72rem;
+      color: #888;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: 0.4rem;
+    }
+
+    /* Story */
+    .story {
+      padding: 7rem 5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .story h2 {
+      font-size: 2.2rem;
+      font-family: 'Georgia', serif;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      color: #2a2218;
+    }
+
+    .story p {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.9;
+      margin-bottom: 1.2rem;
+    }
+
+    .story-right {
+      padding-top: 0.5rem;
+    }
+
+    /* Pillars */
+    .pillars {
+      background-color: #f5ede3;
+      padding: 7rem 5rem;
+    }
+
+    .pillars-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .pillars-inner h2 {
+      font-size: 2.2rem;
+      font-family: 'Georgia', serif;
+      font-weight: 400;
+      color: #2a2218;
+      margin-bottom: 3.5rem;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5px;
+      background-color: #e0d5c5;
+      border: 1.5px solid #e0d5c5;
+    }
+
+    .pillar-card {
+      background-color: #fdf8f3;
+      padding: 3rem 2.5rem;
+    }
+
+    .pillar-card h4 {
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #1a1a1a;
+      margin-bottom: 0.75rem;
+      border-left: 2px solid #b59a6a;
+      padding-left: 1rem;
+    }
+
+    .pillar-card p {
+      font-size: 0.88rem;
+      color: #777;
+      line-height: 1.75;
+    }
+
+    /* Leadership */
+    .leadership {
+      padding: 7rem 5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .leadership h2 {
+      font-size: 2.2rem;
+      font-family: 'Georgia', serif;
+      font-weight: 400;
+      color: #2a2218;
+      margin-bottom: 3.5rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background-color: #ece7de;
+      border: 1.5px solid #ece7de;
+    }
+
+    .team-card {
+      background-color: #fdfbf8;
+      padding: 2.5rem;
+    }
+
+    .team-card h3 {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #1a1a1a;
+      margin-bottom: 0.3rem;
+    }
+
+    .team-card .role {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #b59a6a;
+      margin-bottom: 1rem;
+    }
+
+    .team-card p {
+      font-size: 0.85rem;
+      color: #777;
+      line-height: 1.7;
+    }
+
+    footer {
+      background-color: #2e2318;
+      padding: 2.5rem 5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .footer-logo span { color: #b59a6a; }
+
+    .footer-links { font-size: 0.78rem; color: #666; }
+
+    .footer-links a {
+      color: #666;
+      text-decoration: none;
+      margin-left: 2rem;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-links a:hover { color: #b59a6a; }
+
+    @media (max-width: 768px) {
+      nav { padding: 1.2rem 1.5rem; }
+      .nav-links { display: none; }
+      .page-header, .leadership { padding: 4rem 1.5rem; }
+      .page-header h1 { font-size: 2.2rem; }
+      .stats-bar { padding: 3rem 1.5rem; gap: 3rem; }
+      .story { grid-template-columns: 1fr; gap: 2rem; padding: 4rem 1.5rem; }
+      .pillars { padding: 4rem 1.5rem; }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+      .footer-links a { margin: 0 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="logo">Prime Care <span>Clinics</span></a>
+    <div class="nav-links">
+      <a href="merken.html">Onze Merken</a>
+      <a href="over-ons.html" class="active">Over Ons</a>
+      <a href="carriere.html">Carrière</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <p class="section-label">Wie Wij Zijn</p>
+    <h1>De Organisatie Achter de Merken</h1>
+    <div class="hero-divider"></div>
+    <p>Prime Care Clinics is een holding- en managementgroep die toonaangevende cosmetische klinieken bouwt, ondersteunt en laat groeien — met een onwrikbaar fundament in klinische kwaliteit en operationele excellentie.</p>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat">
+      <h3><span>4</span></h3>
+      <p>Merken in portfolio</p>
+    </div>
+    <div class="stat">
+      <h3><span>20</span>+</h3>
+      <p>Klinieklocaties</p>
+    </div>
+    <div class="stat">
+      <h3><span>3</span></h3>
+      <p>Landen</p>
+    </div>
+    <div class="stat">
+      <h3><span>10</span>+</h3>
+      <p>Jaar actief</p>
+    </div>
+  </div>
+
+  <section class="story">
+    <div>
+      <p class="section-label">Ons Verhaal</p>
+      <h2>Gebouwd op een Fundament van Zorg</h2>
+      <p>Prime Care Clinics werd opgericht vanuit de overtuiging dat de cosmetische sector baat heeft bij een gestructureerde, professionele benadering. Wat begon als één kliniek groeide uit tot een groep die meerdere gespecialiseerde merken beheert in Nederland en België.</p>
+      <p>Onze aanpak is eenvoudig: wij selecteren merken met sterke klinische fundamenten, ondersteunen hen met gedeelde infrastructuur en expertise, en geven hen de ruimte om te groeien met behoud van hun eigen identiteit.</p>
+    </div>
+    <div class="story-right">
+      <p class="section-label">Onze Rol</p>
+      <h2>Holding, Niet Kliniek</h2>
+      <p>Prime Care Clinics biedt zelf geen patiëntgerichte diensten aan. Wij zijn de organisatie achter de schermen — verantwoordelijk voor strategie, governance, compliance en groei, zodat onze merken zich volledig kunnen richten op hun patiënten.</p>
+      <p>Deze structuur geeft onze klinieken het beste van twee werelden: de slagkracht van een onafhankelijk merk, gecombineerd met de kracht van een georganiseerde groep.</p>
+    </div>
+  </section>
+
+  <section class="pillars">
+    <div class="pillars-inner">
+      <p class="section-label">Onze Pijlers</p>
+      <h2>Hoe Wij Waarde Toevoegen</h2>
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <h4>Merkontwikkeling</h4>
+          <p>Wij identificeren, acquireren en ontwikkelen cosmetische klinieken met sterke klinische fundamenten en groeipotentieel in onze kernmarkten.</p>
+        </div>
+        <div class="pillar-card">
+          <h4>Operationele Ondersteuning</h4>
+          <p>Gecentraliseerde HR, compliance, inkoop en technologie stellen onze merken in staat zich volledig te richten op patiëntenzorg en groei.</p>
+        </div>
+        <div class="pillar-card">
+          <h4>Klinisch Bestuur</h4>
+          <p>Een gedeeld governancekader borgt veiligheid, kwaliteit en naleving van regelgeving binnen elk merk — zonder de klinische identiteit te beperken.</p>
+        </div>
+        <div class="pillar-card">
+          <h4>Strategische Groei</h4>
+          <p>Wij ondersteunen uitbreiding via kapitaalallocatie, marktanalyse en operationele expertise voor meerdere locaties en internationale markten.</p>
+        </div>
+        <div class="pillar-card">
+          <h4>Technologie & Data</h4>
+          <p>Gedeelde systemen voor patiëntbeheer, analytics en rapportage geven onze klinieken inzicht om betere beslissingen te nemen.</p>
+        </div>
+        <div class="pillar-card">
+          <h4>Talent & Opleiding</h4>
+          <p>Groepsbreed opleidingsprogramma's, certificeringen en een sterk werkgeversmerk helpen onze merken toptalent aan te trekken en te behouden.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="leadership">
+    <p class="section-label">Leiderschap</p>
+    <h2>Het Corporate Team</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <h3>Directeur</h3>
+        <div class="role">Chief Executive Officer</div>
+        <p>Verantwoordelijk voor de algehele groepsstrategie, acquisities en de relaties met investeerders en externe stakeholders.</p>
+      </div>
+      <div class="team-card">
+        <h3>Operations</h3>
+        <div class="role">Chief Operating Officer</div>
+        <p>Leidt de operationele integratie van alle merken, inclusief HR, logistiek, compliance en kwaliteitsborging.</p>
+      </div>
+      <div class="team-card">
+        <h3>Medisch Bestuur</h3>
+        <div class="role">Chief Medical Officer</div>
+        <p>Bewaakt klinische kwaliteit, protocollen en veiligheid binnen het gehele portfolio. Aanspreekpunt voor regelgeving en accreditatie.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">Prime Care <span>Clinics</span></div>
+    <div class="footer-links">
+      <span>&copy; 2026 Prime Care Clinics Ltd. Alle rechten voorbehouden.</span>
+      <a href="#">Privacybeleid</a>
+      <a href="#">Juridisch</a>
+    </div>
+  </footer>
+
+</body>
+</html>
