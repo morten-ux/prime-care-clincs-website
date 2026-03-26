@@ -139,16 +139,3 @@ function animateCount(el, target, suffix, duration) {
   });
 })();
 
-/* 5. Hero parallax (index.html only) */
-(function () {
-  var hero = document.querySelector('.hero');
-  if (!hero) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  window.addEventListener('scroll', function () {
-    var scrolled = window.scrollY;
-    if (scrolled < window.innerHeight) {
-      hero.style.transform = 'translateY(' + scrolled * 0.22 + 'px)';
-    }
-  }, { passive: true });
-})();
