@@ -4,71 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prime Care Clinics — Hoofdkantoor</title>
+  <link rel="stylesheet" href="prime.css" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-      color: #2a2218;
-      background-color: #fdfbf8;
-    }
-
-    /* Nav */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.6rem 5rem;
-      background-color: #fdfbf8;
-      border-bottom: 1px solid #ece7de;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .logo {
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #2a2218;
-    }
-
-    .logo span {
-      color: #b59a6a;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #555;
-      margin-left: 2.5rem;
-      font-size: 0.82rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .nav-links a:hover {
-      color: #1a1a1a;
-    }
-
-    /* Hero */
+    /* Page-specific: hero */
     .hero {
-      padding: 9rem 5rem 8rem;
+      padding: 9rem clamp(1.5rem, 5vw, 5rem) 8rem;
       max-width: 1100px;
       margin: 0 auto;
-      background: linear-gradient(170deg, #fdf6ef 0%, #fdfbf8 55%);
-      border-radius: 0 0 4px 4px;
+      background: linear-gradient(160deg, #faeee0 0%, #fdfbf8 48%);
     }
 
     .hero-tag {
       font-size: 0.72rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: #b59a6a;
+      color: var(--clr-gold);
       margin-bottom: 2rem;
     }
 
@@ -79,74 +29,24 @@
       line-height: 1.15;
       max-width: 720px;
       margin-bottom: 2rem;
-      color: #2a2218;
+      color: var(--clr-text);
       letter-spacing: -0.01em;
     }
 
-    .hero h1 strong {
-      font-weight: 600;
-    }
+    .hero h1 strong { font-weight: 600; }
 
     .hero p {
       font-size: 1rem;
-      color: #666;
+      color: var(--clr-muted);
       max-width: 540px;
       line-height: 1.8;
     }
 
-    .hero-divider {
-      width: 48px;
-      height: 2px;
-      background-color: #b59a6a;
-      margin: 2.5rem 0;
-    }
-
-    /* Stats bar */
-    .stats-bar {
-      background-color: #2e2318;
-      padding: 3rem 5rem;
-      display: flex;
-      justify-content: center;
-      gap: 6rem;
-      flex-wrap: wrap;
-    }
-
-    .stat {
-      text-align: center;
-    }
-
-    .stat h3 {
-      font-size: 2.4rem;
-      font-weight: 300;
-      color: #fff;
-      letter-spacing: -0.02em;
-    }
-
-    .stat h3 span {
-      color: #b59a6a;
-    }
-
-    .stat p {
-      font-size: 0.72rem;
-      color: #888;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-top: 0.4rem;
-    }
-
-    /* Brands */
+    /* Brands section */
     .brands {
-      padding: 7rem 5rem;
+      padding: 7rem clamp(1.5rem, 5vw, 5rem);
       max-width: 1100px;
       margin: 0 auto;
-    }
-
-    .section-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: #b59a6a;
-      margin-bottom: 0.75rem;
     }
 
     .brands h2 {
@@ -154,57 +54,13 @@
       font-family: 'Georgia', serif;
       font-weight: 400;
       margin-bottom: 3.5rem;
-      color: #2a2218;
-    }
-
-    .brand-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5px;
-      background-color: #ece7de;
-      border: 1.5px solid #ece7de;
-    }
-
-    .brand-card {
-      background: #fdfbf8;
-      padding: 3rem 2.5rem;
-    }
-
-    .brand-card-number {
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      color: #ccc;
-      margin-bottom: 1.5rem;
-    }
-
-    .brand-card h3 {
-      font-size: 1.2rem;
-      font-weight: 500;
-      margin-bottom: 0.75rem;
-      color: #1a1a1a;
-    }
-
-    .brand-card p {
-      font-size: 0.88rem;
-      color: #777;
-      line-height: 1.7;
-    }
-
-    .brand-tag {
-      display: inline-block;
-      margin-top: 1.5rem;
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #b59a6a;
-      border: 1px solid #b59a6a;
-      padding: 0.3rem 0.8rem;
+      color: var(--clr-text);
     }
 
     /* Mission */
     .mission {
-      background-color: #f5ede3;
-      padding: 7rem 5rem;
+      background-color: var(--clr-bg-warm);
+      padding: 7rem clamp(1.5rem, 5vw, 5rem);
     }
 
     .mission-inner {
@@ -226,12 +82,12 @@
       font-family: 'Georgia', serif;
       font-weight: 400;
       margin-bottom: 1.5rem;
-      color: #2a2218;
+      color: var(--clr-text);
     }
 
     .mission-text p {
       font-size: 0.95rem;
-      color: #666;
+      color: var(--clr-muted);
       line-height: 1.9;
       margin-bottom: 1rem;
     }
@@ -244,29 +100,9 @@
       gap: 2rem;
     }
 
-    .pillar {
-      border-left: 2px solid #b59a6a;
-      padding-left: 1.5rem;
-    }
-
-    .pillar h4 {
-      font-size: 0.88rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 0.4rem;
-      color: #1a1a1a;
-    }
-
-    .pillar p {
-      font-size: 0.88rem;
-      color: #777;
-      line-height: 1.6;
-    }
-
     /* Contact */
     .contact {
-      padding: 7rem 5rem;
+      padding: 7rem clamp(1.5rem, 5vw, 5rem);
       max-width: 1100px;
       margin: 0 auto;
       display: flex;
@@ -285,12 +121,12 @@
       font-family: 'Georgia', serif;
       font-weight: 400;
       margin-bottom: 1rem;
-      color: #2a2218;
+      color: var(--clr-text);
     }
 
     .contact-text p {
       font-size: 0.95rem;
-      color: #666;
+      color: var(--clr-muted);
       line-height: 1.8;
     }
 
@@ -306,79 +142,34 @@
       font-size: 0.7rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #b59a6a;
+      color: var(--clr-gold);
       margin-bottom: 0.4rem;
     }
 
-    .contact-item p, .contact-item a {
+    .contact-item p,
+    .contact-item a {
       font-size: 0.92rem;
       color: #444;
       text-decoration: none;
       line-height: 1.6;
+      transition: color var(--dur-fast) var(--ease-out);
     }
 
-    .contact-item a:hover {
-      color: #1a1a1a;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #2e2318;
-      padding: 2.5rem 5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .footer-logo {
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #fff;
-    }
-
-    .footer-logo span {
-      color: #b59a6a;
-    }
-
-    .footer-links {
-      font-size: 0.78rem;
-      color: #666;
-    }
-
-    .footer-links a {
-      color: #666;
-      text-decoration: none;
-      margin-left: 2rem;
-      letter-spacing: 0.05em;
-    }
-
-    .footer-links a:hover {
-      color: #b59a6a;
-    }
+    .contact-item a:hover { color: #1a1a1a; }
 
     @media (max-width: 768px) {
-      nav { padding: 1.2rem 1.5rem; }
-      .nav-links { display: none; }
       .hero { padding: 5rem 1.5rem 4rem; }
       .hero h1 { font-size: 2.4rem; }
-      .stats-bar { padding: 3rem 1.5rem; gap: 3rem; }
       .brands, .contact { padding: 5rem 1.5rem; }
       .mission { padding: 5rem 1.5rem; }
       .mission-inner { flex-direction: column; gap: 3rem; }
-      .brand-grid { grid-template-columns: 1fr; }
-      footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
-      .footer-links a { margin: 0 0.75rem; }
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="index.html" class="logo" style="text-decoration:none;">Prime Care <span>Clinics</span></a>
+    <a href="index.html" class="logo">Prime Care <span>Clinics</span></a>
     <div class="nav-links">
       <a href="merken.html">Onze Merken</a>
       <a href="over-ons.html">Over Ons</a>
@@ -388,54 +179,54 @@
   </nav>
 
   <section class="hero">
-    <p class="hero-tag">Hoofdkantoor</p>
-    <h1>Een groep bouwend aan <strong>Klinische Excellentie</strong> en <strong>Esthetische Innovatie</strong></h1>
+    <p class="hero-tag reveal">Hoofdkantoor</p>
+    <h1 class="reveal reveal-delay-1">Een Groep Gebouwd op <strong>Klinische Excellentie</strong> en Esthetische Innovatie</h1>
     <div class="hero-divider"></div>
-    <p>Prime Care Clinics is de moederorganisatie achter een portfolio van toonaangevende cosmetische klinieken. Wij bieden strategische sturing, operationele ondersteuning en gedeelde infrastructuur om onze merken in staat te stellen uitzonderlijke resultaten te leveren.</p>
+    <p class="reveal reveal-delay-2">Prime Care Clinics is de moederorganisatie achter een portfolio van toonaangevende cosmetische klinieken. Wij bieden strategische sturing, operationele ondersteuning en gedeelde infrastructuur om onze merken in staat te stellen uitzonderlijke resultaten te leveren.</p>
   </section>
 
   <div class="stats-bar">
-    <div class="stat">
-      <h3><span>4</span></h3>
+    <div class="stat reveal">
+      <h3><span data-count="4" data-suffix="">4</span></h3>
       <p>Merken in portfolio</p>
     </div>
-    <div class="stat">
-      <h3><span>20</span>+</h3>
+    <div class="stat reveal reveal-delay-1">
+      <h3><span data-count="20" data-suffix="+">20+</span></h3>
       <p>Klinieklocaties</p>
     </div>
-    <div class="stat">
-      <h3><span>3</span></h3>
+    <div class="stat reveal reveal-delay-2">
+      <h3><span data-count="3" data-suffix="">3</span></h3>
       <p>Landen</p>
     </div>
-    <div class="stat">
-      <h3><span>10</span>+</h3>
+    <div class="stat reveal reveal-delay-3">
+      <h3><span data-count="10" data-suffix="+">10+</span></h3>
       <p>Jaar actief</p>
     </div>
   </div>
 
   <section class="brands" id="brands">
-    <p class="section-label">Ons Portfolio</p>
-    <h2>De Merken Die Wij Beheren</h2>
+    <p class="section-label reveal">Ons Portfolio</p>
+    <h2 class="reveal reveal-delay-1">De Merken Die Wij Beheren</h2>
     <div class="brand-grid">
-      <div class="brand-card">
+      <div class="brand-card reveal">
         <div class="brand-card-number">01</div>
         <h3>Lumiere Clinics</h3>
         <p>Een premium esthetisch merk gericht op gezichtsverjonging en huidgezondheid, met vestigingen in grote steden.</p>
         <div class="brand-tag">Esthetiek</div>
       </div>
-      <div class="brand-card">
+      <div class="brand-card reveal reveal-delay-1">
         <div class="brand-card-number">02</div>
         <h3>Revive MedSpa</h3>
         <p>Een resultaatgericht medisch spa-merk met behandelingen voor lichaamscontouring, laser en geavanceerde huidverzorging.</p>
         <div class="brand-tag">MedSpa</div>
       </div>
-      <div class="brand-card">
+      <div class="brand-card reveal reveal-delay-2">
         <div class="brand-card-number">03</div>
         <h3>ClearSkin Studio</h3>
         <p>Een specialistisch merk voor de behandeling van acne, pigmentatie en huidaandoeningen via klinische protocollen.</p>
         <div class="brand-tag">Dermatologie</div>
       </div>
-      <div class="brand-card">
+      <div class="brand-card reveal reveal-delay-3">
         <div class="brand-card-number">04</div>
         <h3>Form Body Clinic</h3>
         <p>Een op het lichaam gericht merk dat niet-chirurgische behandelingen biedt voor contouring, welzijn en zelfvertrouwen.</p>
@@ -446,13 +237,13 @@
 
   <section class="mission" id="mission">
     <div class="mission-inner">
-      <div class="mission-text">
+      <div class="mission-text reveal">
         <p class="section-label">Wie Wij Zijn</p>
         <h2>De Organisatie Achter de Merken</h2>
         <p>Prime Care Clinics functioneert als een holding- en managementgroep die infrastructuur, bestuur en strategische richting biedt aan elk merk, zodat zij zelfstandig kunnen groeien met de kracht van gedeelde expertise.</p>
         <p>Wij bieden zelf geen patiëntgerichte diensten aan. Onze rol is het bouwen en ondersteunen van de organisaties die dat wel doen.</p>
       </div>
-      <div class="mission-pillars">
+      <div class="mission-pillars reveal reveal-delay-2">
         <div class="pillar">
           <h4>Merkontwikkeling</h4>
           <p>Wij identificeren, acquireren en ontwikkelen cosmetische klinieken met sterke klinische fundamenten en groeipotentieel.</p>
@@ -474,12 +265,12 @@
   </section>
 
   <section class="contact" id="contact">
-    <div class="contact-text">
+    <div class="contact-text reveal">
       <p class="section-label">Neem Contact Op</p>
       <h2>Samenwerkingen &amp; Vragen</h2>
       <p>Voor samenwerkingsmogelijkheden, persvragen of informatie over aansluiting bij de Prime Care Clinics-groep kunt u contact opnemen met ons corporate team.</p>
     </div>
-    <div class="contact-details">
+    <div class="contact-details reveal reveal-delay-2">
       <div class="contact-item">
         <h4>Algemene Vragen</h4>
         <a href="mailto:info@primecareclinics.com">info@primecareclinics.com</a>
@@ -508,5 +299,6 @@
     </div>
   </footer>
 
+  <script src="prime.js"></script>
 </body>
 </html>

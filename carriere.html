@@ -4,92 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Carrière — Prime Care Clinics</title>
+  <link rel="stylesheet" href="prime.css" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-      color: #2a2218;
-      background-color: #fdfbf8;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.6rem 5rem;
-      background-color: #fdfbf8;
-      border-bottom: 1px solid #ece7de;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .logo {
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #2a2218;
-      text-decoration: none;
-    }
-
-    .logo span { color: #b59a6a; }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #555;
-      margin-left: 2.5rem;
-      font-size: 0.82rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .nav-links a:hover { color: #1a1a1a; }
-    .nav-links a.active { color: #b59a6a; }
-
-    .section-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: #b59a6a;
-      margin-bottom: 0.75rem;
-    }
-
-    .hero-divider {
-      width: 48px;
-      height: 2px;
-      background-color: #b59a6a;
-      margin: 2.5rem 0;
-    }
-
-    /* Page header */
-    .page-header {
-      padding: 7rem 5rem 5rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .page-header h1 {
-      font-size: 3rem;
-      font-family: 'Georgia', serif;
-      font-weight: 400;
-      line-height: 1.2;
-      max-width: 660px;
-      color: #2a2218;
-    }
-
-    .page-header p {
-      font-size: 1rem;
-      color: #666;
-      max-width: 560px;
-      line-height: 1.85;
-    }
-
-    /* Why us */
+    /* Page-specific */
     .why {
-      background-color: #f5ede3;
-      padding: 6rem 5rem;
+      background-color: var(--clr-bg-warm);
+      padding: 6rem clamp(1.5rem, 5vw, 5rem);
     }
 
     .why-inner {
@@ -101,7 +21,7 @@
       font-size: 2.2rem;
       font-family: 'Georgia', serif;
       font-weight: 400;
-      color: #2a2218;
+      color: var(--clr-text);
       margin-bottom: 3rem;
     }
 
@@ -118,7 +38,7 @@
       text-transform: uppercase;
       color: #1a1a1a;
       margin-bottom: 0.6rem;
-      border-left: 2px solid #b59a6a;
+      border-left: 2px solid var(--clr-gold);
       padding-left: 1rem;
     }
 
@@ -128,9 +48,8 @@
       line-height: 1.75;
     }
 
-    /* Vacatures */
     .vacatures {
-      padding: 7rem 5rem;
+      padding: 7rem clamp(1.5rem, 5vw, 5rem);
       max-width: 1100px;
       margin: 0 auto;
     }
@@ -139,22 +58,12 @@
       font-size: 2.2rem;
       font-family: 'Georgia', serif;
       font-weight: 400;
-      color: #2a2218;
+      color: var(--clr-text);
       margin-bottom: 3rem;
     }
 
     .vacature-list {
-      border-top: 1.5px solid #ece7de;
-    }
-
-    .vacature-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 2rem 0;
-      border-bottom: 1.5px solid #ece7de;
-      gap: 2rem;
-      flex-wrap: wrap;
+      border-top: 1px solid var(--clr-border);
     }
 
     .vacature-info h3 {
@@ -174,37 +83,18 @@
       font-size: 0.75rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #999;
+      color: var(--clr-faint);
     }
 
     .vacature-meta .brand {
-      color: #b59a6a;
+      color: var(--clr-gold);
     }
 
-    .vacature-apply {
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #b59a6a;
-      border: 1px solid #b59a6a;
-      padding: 0.55rem 1.2rem;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .vacature-apply:hover {
-      background-color: #b59a6a;
-      color: #fff;
-    }
-
-    /* Open application */
     .open-sollicitatie {
-      background-color: #2e2318;
-      padding: 6rem 5rem;
+      background-color: var(--clr-dark);
+      padding: 6rem clamp(1.5rem, 5vw, 5rem);
       text-align: center;
     }
-
-    .open-sollicitatie p.section-label { color: #b59a6a; margin-bottom: 1rem; }
 
     .open-sollicitatie h2 {
       font-size: 2rem;
@@ -216,68 +106,17 @@
 
     .open-sollicitatie p.sub {
       font-size: 0.92rem;
-      color: #999;
+      color: var(--clr-faint);
       max-width: 480px;
       margin: 0 auto 2.5rem;
       line-height: 1.7;
     }
 
-    .open-sollicitatie a {
-      display: inline-block;
-      font-size: 0.78rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #b59a6a;
-      border: 1px solid #b59a6a;
-      padding: 0.85rem 2rem;
-      text-decoration: none;
-    }
-
-    .open-sollicitatie a:hover { background-color: #b59a6a; color: #fff; }
-
-    footer {
-      background-color: #2e2318;
-      border-top: 1px solid #3d3124;
-      padding: 2.5rem 5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .footer-logo {
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #fff;
-    }
-
-    .footer-logo span { color: #b59a6a; }
-
-    .footer-links { font-size: 0.78rem; color: #666; }
-
-    .footer-links a {
-      color: #666;
-      text-decoration: none;
-      margin-left: 2rem;
-      letter-spacing: 0.05em;
-    }
-
-    .footer-links a:hover { color: #b59a6a; }
-
     @media (max-width: 768px) {
-      nav { padding: 1.2rem 1.5rem; }
-      .nav-links { display: none; }
-      .page-header, .vacatures { padding: 4rem 1.5rem; }
-      .page-header h1 { font-size: 2.2rem; }
       .why { padding: 4rem 1.5rem; }
       .why-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .vacatures { padding: 4rem 1.5rem; }
       .open-sollicitatie { padding: 4rem 1.5rem; }
-      .vacature-item { flex-direction: column; align-items: flex-start; }
-      footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
-      .footer-links a { margin: 0 0.75rem; }
     }
   </style>
 </head>
@@ -294,38 +133,38 @@
   </nav>
 
   <div class="page-header">
-    <p class="section-label">Carrière</p>
-    <h1>Werk Mee aan de Toekomst van Esthetische Zorg</h1>
+    <p class="section-label reveal">Carrière</p>
+    <h1 class="reveal reveal-delay-1">Werk Mee aan de Toekomst van Esthetische Zorg</h1>
     <div class="hero-divider"></div>
-    <p>Prime Care Clinics en haar merken groeien. Wij zoeken mensen die gedreven zijn door kwaliteit, resultaat en een gezamenlijk doel — of het nu gaat om klinische rollen, management of corporate functies.</p>
+    <p class="reveal reveal-delay-2">Prime Care Clinics en haar merken groeien. Wij zoeken mensen die gedreven zijn door kwaliteit, resultaat en een gezamenlijk doel — of het nu gaat om klinische rollen, management of corporate functies.</p>
   </div>
 
   <section class="why">
     <div class="why-inner">
-      <p class="section-label">Waarom Prime Care</p>
-      <h2>Werken Binnen een Groeiende Groep</h2>
+      <p class="section-label reveal">Waarom Prime Care</p>
+      <h2 class="reveal reveal-delay-1">Werken Binnen een Groeiende Groep</h2>
       <div class="why-grid">
-        <div class="why-item">
+        <div class="why-item reveal">
           <h4>Doorgroeimogelijkheden</h4>
           <p>Met meerdere merken en locaties bieden wij echte doorgroeipaden — van specialist naar teamlead, van kliniek naar corporate.</p>
         </div>
-        <div class="why-item">
+        <div class="why-item reveal reveal-delay-1">
           <h4>Klinische Kwaliteit</h4>
           <p>Onze merken werken met de nieuwste apparatuur, gestandaardiseerde protocollen en een sterk focussen op veiligheid en resultaat.</p>
         </div>
-        <div class="why-item">
-          <h4>Opleiding & Ontwikkeling</h4>
+        <div class="why-item reveal reveal-delay-2">
+          <h4>Opleiding &amp; Ontwikkeling</h4>
           <p>Groepsbrede training, externe certificeringen en toegang tot het netwerk van specialisten binnen onze portfolio.</p>
         </div>
-        <div class="why-item">
+        <div class="why-item reveal reveal-delay-3">
           <h4>Stabiele Omgeving</h4>
           <p>Als holding-groep bieden wij de stabiliteit van een gestructureerde organisatie, zonder de bureaucratie van een groot concern.</p>
         </div>
-        <div class="why-item">
+        <div class="why-item reveal reveal-delay-4">
           <h4>Internationaal Netwerk</h4>
           <p>Actief in Nederland en België, met ambities om verder te groeien. Internationale kansen voor medewerkers die dat willen.</p>
         </div>
-        <div class="why-item">
+        <div class="why-item reveal reveal-delay-5">
           <h4>Impact</h4>
           <p>Elke medewerker draagt bij aan klinieken die patiënten helpen zich beter in hun vel te voelen — dat is werk met betekenis.</p>
         </div>
@@ -334,11 +173,11 @@
   </section>
 
   <section class="vacatures">
-    <p class="section-label">Openstaande Functies</p>
-    <h2>Huidige Vacatures</h2>
+    <p class="section-label reveal">Openstaande Functies</p>
+    <h2 class="reveal reveal-delay-1">Huidige Vacatures</h2>
     <div class="vacature-list">
 
-      <div class="vacature-item">
+      <div class="vacature-item reveal">
         <div class="vacature-info">
           <h3>Behandelaar Injectables</h3>
           <div class="vacature-meta">
@@ -350,7 +189,7 @@
         <a href="contact.html" class="vacature-apply">Solliciteer</a>
       </div>
 
-      <div class="vacature-item">
+      <div class="vacature-item reveal reveal-delay-1">
         <div class="vacature-info">
           <h3>Kliniekmanager</h3>
           <div class="vacature-meta">
@@ -362,7 +201,7 @@
         <a href="contact.html" class="vacature-apply">Solliciteer</a>
       </div>
 
-      <div class="vacature-item">
+      <div class="vacature-item reveal reveal-delay-2">
         <div class="vacature-info">
           <h3>Huidtherapeut</h3>
           <div class="vacature-meta">
@@ -374,7 +213,7 @@
         <a href="contact.html" class="vacature-apply">Solliciteer</a>
       </div>
 
-      <div class="vacature-item">
+      <div class="vacature-item reveal reveal-delay-3">
         <div class="vacature-info">
           <h3>Behandelaar Lichaamsbehandelingen</h3>
           <div class="vacature-meta">
@@ -386,7 +225,7 @@
         <a href="contact.html" class="vacature-apply">Solliciteer</a>
       </div>
 
-      <div class="vacature-item">
+      <div class="vacature-item reveal reveal-delay-4">
         <div class="vacature-info">
           <h3>HR Business Partner</h3>
           <div class="vacature-meta">
@@ -398,7 +237,7 @@
         <a href="contact.html" class="vacature-apply">Solliciteer</a>
       </div>
 
-      <div class="vacature-item">
+      <div class="vacature-item reveal reveal-delay-5">
         <div class="vacature-info">
           <h3>Marketing Manager Portfolio</h3>
           <div class="vacature-meta">
@@ -413,7 +252,7 @@
     </div>
   </section>
 
-  <div class="open-sollicitatie">
+  <div class="open-sollicitatie reveal">
     <p class="section-label">Niet gevonden?</p>
     <h2>Stuur een Open Sollicitatie</h2>
     <p class="sub">Zie je jouw ideale functie er niet bij? Wij ontvangen graag je open sollicitatie. Vertel ons wie je bent en wat je te bieden hebt.</p>
@@ -429,5 +268,6 @@
     </div>
   </footer>
 
+  <script src="prime.js"></script>
 </body>
 </html>
