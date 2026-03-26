@@ -14,11 +14,12 @@
   onScroll();
 })();
 
-/* 2. Scroll reveal — IntersectionObserver */
+/* 2. Scroll reveal — IntersectionObserver (handles both .reveal and .reveal-clip) */
 (function () {
+  var allReveal = document.querySelectorAll('.reveal, .reveal-clip');
+
   if (!('IntersectionObserver' in window)) {
-    // Fallback: just show everything
-    document.querySelectorAll('.reveal').forEach(function (el) {
+    allReveal.forEach(function (el) {
       el.classList.add('is-visible');
     });
     return;
@@ -33,10 +34,10 @@
         }
       });
     },
-    { threshold: 0.12 }
+    { threshold: 0.1 }
   );
 
-  document.querySelectorAll('.reveal').forEach(function (el) {
+  allReveal.forEach(function (el) {
     observer.observe(el);
   });
 })();
@@ -74,4 +75,80 @@ function animateCount(el, target, suffix, duration) {
   document.querySelectorAll('[data-count]').forEach(function (el) {
     statsObserver.observe(el);
   });
+})();
+
+/* 4. Custom cursor — gold dot + lagging ring */
+(function () {
+  if (window.matchMedia('(pointer: coarse)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  document.body.classList.add('has-custom-cursor');
+
+  var dot = document.createElement('div');
+  dot.className = 'cursor-dot';
+  var ring = document.createElement('div');
+  ring.className = 'cursor-ring';
+  document.body.appendChild(dot);
+  document.body.appendChild(ring);
+
+  var mouseX = window.innerWidth / 2;
+  var mouseY = window.innerHeight / 2;
+  var ringX = mouseX;
+  var ringY = mouseY;
+  var visible = false;
+
+  document.addEventListener('mousemove', function (e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    if (!visible) {
+      ringX = mouseX;
+      ringY = mouseY;
+      visible = true;
+      dot.style.opacity = '1';
+      ring.style.opacity = '1';
+    }
+    dot.style.left = mouseX + 'px';
+    dot.style.top = mouseY + 'px';
+  });
+
+  document.addEventListener('mouseleave', function () {
+    dot.style.opacity = '0';
+    ring.style.opacity = '0';
+  });
+
+  dot.style.opacity = '0';
+  ring.style.opacity = '0';
+
+  function animateRing() {
+    ringX += (mouseX - ringX) * 0.1;
+    ringY += (mouseY - ringY) * 0.1;
+    ring.style.left = ringX + 'px';
+    ring.style.top = ringY + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  var hoverTargets = 'a, button, .brand-card, .team-card, .pillar-card, .vacature-item, .why-item';
+  document.querySelectorAll(hoverTargets).forEach(function (el) {
+    el.addEventListener('mouseenter', function () {
+      ring.classList.add('cursor-ring--hover');
+    });
+    el.addEventListener('mouseleave', function () {
+      ring.classList.remove('cursor-ring--hover');
+    });
+  });
+})();
+
+/* 5. Hero parallax (index.html only) */
+(function () {
+  var hero = document.querySelector('.hero');
+  if (!hero) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  window.addEventListener('scroll', function () {
+    var scrolled = window.scrollY;
+    if (scrolled < window.innerHeight) {
+      hero.style.transform = 'translateY(' + scrolled * 0.22 + 'px)';
+    }
+  }, { passive: true });
 })();

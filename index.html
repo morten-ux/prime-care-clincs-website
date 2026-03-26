@@ -12,6 +12,14 @@
       max-width: 1100px;
       margin: 0 auto;
       background: linear-gradient(160deg, #faeee0 0%, #fdfbf8 48%);
+      background-size: 200% 200%;
+      animation: hero-gradient-shift 12s ease-in-out infinite;
+    }
+
+    @keyframes hero-gradient-shift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .hero-tag {
@@ -180,10 +188,33 @@
 
   <section class="hero">
     <p class="hero-tag reveal">Hoofdkantoor</p>
-    <h1 class="reveal reveal-delay-1">Een Groep Gebouwd op <strong>Klinische Excellentie</strong> en Esthetische Innovatie</h1>
+    <h1 class="reveal-clip reveal-delay-1">Een Groep Gebouwd op <strong>Klinische Excellentie</strong> en Esthetische Innovatie</h1>
     <div class="hero-divider"></div>
     <p class="reveal reveal-delay-2">Prime Care Clinics is de moederorganisatie achter een portfolio van toonaangevende cosmetische klinieken. Wij bieden strategische sturing, operationele ondersteuning en gedeelde infrastructuur om onze merken in staat te stellen uitzonderlijke resultaten te leveren.</p>
   </section>
+
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Klinische Excellentie</span><span class="marquee-sep">·</span>
+      <span>Merkontwikkeling</span><span class="marquee-sep">·</span>
+      <span>Esthetische Innovatie</span><span class="marquee-sep">·</span>
+      <span>Operationele Ondersteuning</span><span class="marquee-sep">·</span>
+      <span>Klinisch Bestuur</span><span class="marquee-sep">·</span>
+      <span>Strategische Groei</span><span class="marquee-sep">·</span>
+      <span>4 Merken</span><span class="marquee-sep">·</span>
+      <span>3 Landen</span><span class="marquee-sep">·</span>
+      <span>20+ Locaties</span><span class="marquee-sep">·</span>
+      <span>Klinische Excellentie</span><span class="marquee-sep">·</span>
+      <span>Merkontwikkeling</span><span class="marquee-sep">·</span>
+      <span>Esthetische Innovatie</span><span class="marquee-sep">·</span>
+      <span>Operationele Ondersteuning</span><span class="marquee-sep">·</span>
+      <span>Klinisch Bestuur</span><span class="marquee-sep">·</span>
+      <span>Strategische Groei</span><span class="marquee-sep">·</span>
+      <span>4 Merken</span><span class="marquee-sep">·</span>
+      <span>3 Landen</span><span class="marquee-sep">·</span>
+      <span>20+ Locaties</span><span class="marquee-sep">·</span>
+    </div>
+  </div>
 
   <div class="stats-bar">
     <div class="stat reveal">

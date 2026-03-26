@@ -47,6 +47,55 @@ body {
   animation: page-fade-in var(--dur-slow) var(--ease-out) both;
 }
 
+body.has-custom-cursor,
+body.has-custom-cursor * {
+  cursor: none !important;
+}
+
+/* ------------------------------------------------------------
+   2b. Custom Cursor
+   ------------------------------------------------------------ */
+.cursor-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--clr-gold);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width var(--dur-fast) var(--ease-out),
+              height var(--dur-fast) var(--ease-out),
+              opacity var(--dur-fast) var(--ease-out);
+  will-change: transform;
+}
+
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(181, 154, 106, 0.45);
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.22s var(--ease-out),
+              height 0.22s var(--ease-out),
+              border-color 0.22s var(--ease-out),
+              opacity var(--dur-fast) var(--ease-out);
+  will-change: transform;
+}
+
+.cursor-ring--hover {
+  width: 52px;
+  height: 52px;
+  border-color: rgba(181, 154, 106, 0.7);
+}
+
 @keyframes page-fade-in {
   from { opacity: 0; }
   to   { opacity: 1; }
@@ -258,13 +307,34 @@ nav.scrolled {
 }
 
 /* ------------------------------------------------------------
-   5. Cards — Hover Lift
+   5. Cards — Hover Lift + Bottom Sweep
    ------------------------------------------------------------ */
 .brand-card,
 .team-card,
 .pillar-card {
+  position: relative;
+  overflow: hidden;
   transition: transform var(--dur-base) var(--ease-out),
               box-shadow var(--dur-base) var(--ease-out);
+}
+
+.brand-card::after,
+.team-card::after,
+.pillar-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--clr-gold);
+  transition: width 0.45s var(--ease-out);
+}
+
+.brand-card:hover::after,
+.team-card:hover::after,
+.pillar-card:hover::after {
+  width: 100%;
 }
 
 .brand-card:hover,
@@ -273,7 +343,6 @@ nav.scrolled {
   transform: translateY(-3px);
   box-shadow: 0 8px 32px rgba(46, 35, 24, 0.08);
   z-index: 1;
-  position: relative;
 }
 
 /* Brand grid — use cell borders instead of gap trick */
@@ -496,12 +565,62 @@ footer {
   transform: translateY(0);
 }
 
-.reveal-delay-1 { transition-delay: 80ms; }
-.reveal-delay-2 { transition-delay: 160ms; }
-.reveal-delay-3 { transition-delay: 240ms; }
-.reveal-delay-4 { transition-delay: 320ms; }
-.reveal-delay-5 { transition-delay: 400ms; }
-.reveal-delay-6 { transition-delay: 480ms; }
+/* Clip-path reveal for headings — text slides up through a mask */
+.reveal-clip {
+  clip-path: inset(0 0 110% 0);
+  transition: clip-path 0.95s var(--ease-out);
+}
+
+.reveal-clip.is-visible {
+  clip-path: inset(0 0 0% 0);
+}
+
+.reveal-delay-1  { transition-delay: 80ms; }
+.reveal-delay-2  { transition-delay: 160ms; }
+.reveal-delay-3  { transition-delay: 240ms; }
+.reveal-delay-4  { transition-delay: 320ms; }
+.reveal-delay-5  { transition-delay: 400ms; }
+.reveal-delay-6  { transition-delay: 480ms; }
+
+/* ------------------------------------------------------------
+   9b. Marquee Strip
+   ------------------------------------------------------------ */
+.marquee-strip {
+  overflow: hidden;
+  padding: 1.1rem 0;
+  background-color: var(--clr-dark);
+  border-top: 1px solid #3d3124;
+  border-bottom: 1px solid #3d3124;
+}
+
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee-scroll 36s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-track span {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #666;
+  padding: 0 2.2rem;
+}
+
+.marquee-sep {
+  color: var(--clr-gold) !important;
+  padding: 0 0.5rem !important;
+  letter-spacing: 0 !important;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
 
 /* ------------------------------------------------------------
    10. Responsive
