@@ -19,9 +19,7 @@
   var allReveal = document.querySelectorAll('.reveal, .reveal-clip');
 
   if (!('IntersectionObserver' in window)) {
-    allReveal.forEach(function (el) {
-      el.classList.add('is-visible');
-    });
+    allReveal.forEach(function (el) { el.classList.add('is-visible'); });
     return;
   }
 
@@ -34,12 +32,23 @@
         }
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0.08 }
   );
 
-  allReveal.forEach(function (el) {
-    observer.observe(el);
-  });
+  allReveal.forEach(function (el) { observer.observe(el); });
+
+  // Safety net: IO is unreliable for elements already in the viewport on load.
+  // After 120ms the initial hidden state has been painted — now force them visible
+  // so the transition runs correctly.
+  setTimeout(function () {
+    allReveal.forEach(function (el) {
+      if (el.classList.contains('is-visible')) return;
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('is-visible');
+      }
+    });
+  }, 120);
 })();
 
 /* 3. Counter animation for stats */
