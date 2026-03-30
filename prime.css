@@ -498,16 +498,27 @@ nav.scrolled {
 footer {
   background-color: var(--clr-dark);
   border-top: 1px solid #2a3d52;
-  padding: 2.5rem clamp(1.5rem, 5vw, 5rem);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 4rem;
+  padding: 5rem clamp(1.5rem, 5vw, 5rem) 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-brand p {
+  font-size: 0.88rem;
+  color: var(--clr-faint);
+  line-height: 1.8;
+  margin-top: 1rem;
+  max-width: 300px;
 }
 
 .footer-logo {
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -518,21 +529,62 @@ footer {
   color: var(--clr-gold);
 }
 
-.footer-links {
-  font-size: 0.78rem;
-  color: var(--clr-faint);
+.footer-col h4 {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  margin-bottom: 1.25rem;
 }
 
-.footer-links a {
+.footer-col a,
+.footer-col p {
+  display: block;
+  font-size: 0.85rem;
   color: var(--clr-faint);
   text-decoration: none;
-  margin-left: 2rem;
-  letter-spacing: 0.05em;
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
   transition: color var(--dur-fast) var(--ease-out);
 }
 
-.footer-links a:hover {
-  color: var(--clr-gold);
+.footer-col a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #2a3d52;
+  padding: 1.5rem clamp(1.5rem, 5vw, 5rem);
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.footer-bottom span {
+  font-size: 0.75rem;
+  color: var(--clr-faint);
+  letter-spacing: 0.04em;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-bottom-links a {
+  font-size: 0.75rem;
+  color: var(--clr-faint);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.footer-bottom-links a:hover {
+  color: #fff;
 }
 
 /* ------------------------------------------------------------
@@ -642,13 +694,16 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  footer {
-    flex-direction: column;
-    text-align: center;
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 3rem 1.5rem 2.5rem;
   }
 
-  .footer-links a {
-    margin: 0 0.75rem;
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
   }
 
   .vacature-item {
