@@ -90,6 +90,12 @@ nav.scrolled {
   color: var(--clr-gold);
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
 .nav-links a {
   position: relative;
   text-decoration: none;
@@ -127,7 +133,6 @@ nav.scrolled {
 
 .nav-academy {
   display: inline-block;
-  margin-left: 2rem;
   font-size: 0.75rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -604,7 +609,8 @@ footer {
     padding: 1.2rem 1.5rem;
   }
 
-  .nav-links {
+  .nav-links,
+  .nav-right {
     display: none;
   }
 
