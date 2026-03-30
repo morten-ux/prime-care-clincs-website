@@ -7,16 +7,16 @@
    1. Design Tokens
    ------------------------------------------------------------ */
 :root {
-  --clr-bg:          #ffffff;
-  --clr-bg-warm:     #edf2fb;
-  --clr-bg-warm-alt: #f4f7fd;
-  --clr-dark:        #0b1d3f;
-  --clr-text:        #0b1d3f;
-  --clr-muted:       #4a5f7a;
-  --clr-faint:       #8699af;
-  --clr-gold:        #2c5fad;
-  --clr-border:      #d0dcec;
-  --clr-border-warm: #c0cfde;
+  --clr-bg:          #f5f6f8;
+  --clr-bg-warm:     #e8eaef;
+  --clr-bg-warm-alt: #edeef3;
+  --clr-dark:        #1e2d3d;
+  --clr-text:        #1e2d3d;
+  --clr-muted:       #54646f;
+  --clr-faint:       #8a96a4;
+  --clr-gold:        #3d6b8f;
+  --clr-border:      #c8d0d9;
+  --clr-border-warm: #bac3cd;
 
   --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
@@ -71,7 +71,7 @@ nav {
 }
 
 nav.scrolled {
-  box-shadow: 0 1px 24px rgba(11, 29, 63, 0.08);
+  box-shadow: 0 1px 24px rgba(30, 45, 61, 0.08);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   background-color: rgba(255, 255, 255, 0.88);
@@ -211,7 +211,7 @@ nav.scrolled {
 
 .stat p {
   font-size: 0.72rem;
-  color: #7a9ab8;
+  color: #8a96a4;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   margin-top: 0.4rem;
@@ -293,7 +293,7 @@ nav.scrolled {
 .team-card:hover,
 .pillar-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(11, 29, 63, 0.10);
+  box-shadow: 0 8px 32px rgba(30, 45, 61, 0.10);
   z-index: 1;
 }
 
@@ -313,7 +313,7 @@ nav.scrolled {
 .brand-card-number {
   font-size: 0.72rem;
   letter-spacing: 0.15em;
-  color: #a0b4cc;
+  color: var(--clr-faint);
   margin-bottom: 1.5rem;
 }
 
@@ -456,7 +456,7 @@ nav.scrolled {
 }
 
 .vacature-item:hover {
-  background-color: rgba(237, 242, 251, 0.6);
+  background-color: rgba(232, 234, 239, 0.6);
 }
 
 /* ------------------------------------------------------------
@@ -464,7 +464,7 @@ nav.scrolled {
    ------------------------------------------------------------ */
 footer {
   background-color: var(--clr-dark);
-  border-top: 1px solid #1a3060;
+  border-top: 1px solid #2a3d52;
   padding: 2.5rem clamp(1.5rem, 5vw, 5rem);
   display: flex;
   justify-content: space-between;
@@ -544,8 +544,8 @@ footer {
   overflow: hidden;
   padding: 1.1rem 0;
   background-color: var(--clr-dark);
-  border-top: 1px solid #1a3060;
-  border-bottom: 1px solid #1a3060;
+  border-top: 1px solid #2a3d52;
+  border-bottom: 1px solid #2a3d52;
 }
 
 .marquee-track {
@@ -562,7 +562,7 @@ footer {
   font-size: 0.68rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #6a8ab0;
+  color: #7a8c9e;
   padding: 0 2.2rem;
 }
 
