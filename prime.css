@@ -125,6 +125,25 @@ nav.scrolled {
   color: var(--clr-gold);
 }
 
+.nav-academy {
+  display: inline-block;
+  margin-left: 2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  border: 1px solid var(--clr-gold);
+  padding: 0.5rem 1.2rem;
+  text-decoration: none;
+  transition: background-color var(--dur-base) var(--ease-out),
+              color var(--dur-base) var(--ease-out);
+}
+
+.nav-academy:hover {
+  background-color: var(--clr-gold);
+  color: #fff;
+}
+
 /* ------------------------------------------------------------
    4. Shared Section Components
    ------------------------------------------------------------ */
