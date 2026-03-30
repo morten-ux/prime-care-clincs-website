@@ -7,16 +7,16 @@
    1. Design Tokens
    ------------------------------------------------------------ */
 :root {
-  --clr-bg:          #fdfbf8;
-  --clr-bg-warm:     #f5ede3;
-  --clr-bg-warm-alt: #fdf8f3;
-  --clr-dark:        #2e2318;
-  --clr-text:        #2a2218;
-  --clr-muted:       #666;
-  --clr-faint:       #999;
-  --clr-gold:        #b59a6a;
-  --clr-border:      #ece7de;
-  --clr-border-warm: #e0d5c5;
+  --clr-bg:          #ffffff;
+  --clr-bg-warm:     #edf2fb;
+  --clr-bg-warm-alt: #f4f7fd;
+  --clr-dark:        #0b1d3f;
+  --clr-text:        #0b1d3f;
+  --clr-muted:       #4a5f7a;
+  --clr-faint:       #8699af;
+  --clr-gold:        #2c5fad;
+  --clr-border:      #d0dcec;
+  --clr-border-warm: #c0cfde;
 
   --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
@@ -71,10 +71,10 @@ nav {
 }
 
 nav.scrolled {
-  box-shadow: 0 1px 24px rgba(46, 35, 24, 0.07);
+  box-shadow: 0 1px 24px rgba(11, 29, 63, 0.08);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background-color: rgba(253, 251, 248, 0.88);
+  background-color: rgba(255, 255, 255, 0.88);
 }
 
 .logo {
@@ -93,7 +93,7 @@ nav.scrolled {
 .nav-links a {
   position: relative;
   text-decoration: none;
-  color: #555;
+  color: var(--clr-muted);
   margin-left: 2.5rem;
   font-size: 0.82rem;
   letter-spacing: 0.06em;
@@ -113,7 +113,7 @@ nav.scrolled {
 }
 
 .nav-links a:hover {
-  color: #1a1a1a;
+  color: var(--clr-text);
 }
 
 .nav-links a:hover::after,
@@ -211,7 +211,7 @@ nav.scrolled {
 
 .stat p {
   font-size: 0.72rem;
-  color: #888;
+  color: #7a9ab8;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   margin-top: 0.4rem;
@@ -293,7 +293,7 @@ nav.scrolled {
 .team-card:hover,
 .pillar-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(46, 35, 24, 0.08);
+  box-shadow: 0 8px 32px rgba(11, 29, 63, 0.10);
   z-index: 1;
 }
 
@@ -313,7 +313,7 @@ nav.scrolled {
 .brand-card-number {
   font-size: 0.72rem;
   letter-spacing: 0.15em;
-  color: #ccc;
+  color: #a0b4cc;
   margin-bottom: 1.5rem;
 }
 
@@ -321,12 +321,12 @@ nav.scrolled {
   font-size: 1.2rem;
   font-weight: 500;
   margin-bottom: 0.75rem;
-  color: #1a1a1a;
+  color: var(--clr-text);
 }
 
 .brand-card p {
   font-size: 0.88rem;
-  color: #777;
+  color: var(--clr-muted);
   line-height: 1.7;
 }
 
@@ -348,7 +348,7 @@ nav.scrolled {
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #1a1a1a;
+  color: var(--clr-text);
   margin-bottom: 0.75rem;
   border-left: 2px solid var(--clr-gold);
   padding-left: 1rem;
@@ -356,7 +356,7 @@ nav.scrolled {
 
 .pillar-card p {
   font-size: 0.88rem;
-  color: #777;
+  color: var(--clr-muted);
   line-height: 1.75;
 }
 
@@ -376,7 +376,7 @@ nav.scrolled {
 .team-card h3 {
   font-size: 1.05rem;
   font-weight: 500;
-  color: #1a1a1a;
+  color: var(--clr-text);
   margin-bottom: 0.3rem;
 }
 
@@ -390,7 +390,7 @@ nav.scrolled {
 
 .team-card p {
   font-size: 0.85rem;
-  color: #777;
+  color: var(--clr-muted);
   line-height: 1.7;
 }
 
@@ -413,12 +413,12 @@ nav.scrolled {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   margin-bottom: 0.4rem;
-  color: #1a1a1a;
+  color: var(--clr-text);
 }
 
 .pillar p {
   font-size: 0.88rem;
-  color: #777;
+  color: var(--clr-muted);
   line-height: 1.6;
 }
 
@@ -456,7 +456,7 @@ nav.scrolled {
 }
 
 .vacature-item:hover {
-  background-color: rgba(245, 237, 227, 0.5);
+  background-color: rgba(237, 242, 251, 0.6);
 }
 
 /* ------------------------------------------------------------
@@ -464,7 +464,7 @@ nav.scrolled {
    ------------------------------------------------------------ */
 footer {
   background-color: var(--clr-dark);
-  border-top: 1px solid #3d3124;
+  border-top: 1px solid #1a3060;
   padding: 2.5rem clamp(1.5rem, 5vw, 5rem);
   display: flex;
   justify-content: space-between;
@@ -487,11 +487,11 @@ footer {
 
 .footer-links {
   font-size: 0.78rem;
-  color: #666;
+  color: var(--clr-faint);
 }
 
 .footer-links a {
-  color: #666;
+  color: var(--clr-faint);
   text-decoration: none;
   margin-left: 2rem;
   letter-spacing: 0.05em;
@@ -544,8 +544,8 @@ footer {
   overflow: hidden;
   padding: 1.1rem 0;
   background-color: var(--clr-dark);
-  border-top: 1px solid #3d3124;
-  border-bottom: 1px solid #3d3124;
+  border-top: 1px solid #1a3060;
+  border-bottom: 1px solid #1a3060;
 }
 
 .marquee-track {
@@ -562,7 +562,7 @@ footer {
   font-size: 0.68rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #666;
+  color: #6a8ab0;
   padding: 0 2.2rem;
 }
 
