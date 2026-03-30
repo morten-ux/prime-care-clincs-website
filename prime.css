@@ -90,10 +90,10 @@ nav.scrolled {
   color: var(--clr-gold);
 }
 
-.nav-right {
+.nav-left {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .nav-links a {
@@ -136,17 +136,15 @@ nav.scrolled {
   font-size: 0.75rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--clr-gold);
-  border: 1px solid var(--clr-gold);
+  color: #fff;
+  background-color: var(--clr-gold);
   padding: 0.5rem 1.2rem;
   text-decoration: none;
-  transition: background-color var(--dur-base) var(--ease-out),
-              color var(--dur-base) var(--ease-out);
+  transition: background-color var(--dur-base) var(--ease-out);
 }
 
 .nav-academy:hover {
-  background-color: var(--clr-gold);
-  color: #fff;
+  background-color: var(--clr-dark);
 }
 
 /* ------------------------------------------------------------
@@ -609,8 +607,7 @@ footer {
     padding: 1.2rem 1.5rem;
   }
 
-  .nav-links,
-  .nav-right {
+  .nav-links {
     display: none;
   }
 
